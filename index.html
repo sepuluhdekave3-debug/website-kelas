@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SepuluhDeTig</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #3b82f6 0%, #ef4444 100%);
+        }
+        
+        .neumorphic {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 
+                0 8px 32px 0 rgba(31, 38, 135, 0.37),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .neumorphic-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 
+                0 12px 40px 0 rgba(31, 38, 135, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        
+        .gradient-button {
+            background: linear-gradient(135deg, #ef4444 0%, #8b5cf6 100%);
+        }
+        
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 8rem);
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-card {
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 50px 0 rgba(31, 38, 135, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Header -->
+    <header class="neumorphic rounded-b-3xl mx-4 mt-4 mb-8">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">                
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 neumorphic rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">D3</span>
+                    </div>
+                    <span class="text-white font-bold text-xl">X DKV 3</span>
+                </div>
+                
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-white font-semibold hover:text-blue-200">Home</a>
+                    <a href="#about" class="nav-link text-white font-semibold hover:text-blue-200">About</a>
+                    <a href="#content" class="nav-link text-white font-semibold hover:text-blue-200">Content</a>
+                    <a href="#others" class="nav-link text-white font-semibold hover:text-blue-200">Others</a>
+                </nav>
+                
+                <!-- Contact Info -->
+                <div class="hidden lg:block text-right">
+                    <div class="text-white text-sm font-medium">www.sepuluhdetig.com</div>
+                    <div class="text-blue-200 text-sm">sepuluhdekave3@gmail.com</div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden neumorphic rounded-lg p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pt-4 border-t border-white/20">
+                <nav class="flex flex-col space-y-3">
+                    <a href="#home" class="text-white font-semibold">Home</a>
+                    <a href="#about" class="text-white font-semibold">About</a>
+                    <a href="#content" class="text-white font-semibold">Content</a>
+                    <a href="#others" class="text-white font-semibold">Others</a>
+                </nav>
+                <div class="mt-4 pt-4 border-t border-white/20">
+                    <div class="text-white text-sm font-medium">www.sepuluhdetig.com</div>
+                    <div class="text-blue-200 text-sm">sepuluhdekave3@gmail.com</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="text-center py-20 px-4">
+        <h1 class="hero-title font-black mb-8">SepuluhDeTig.</h1>
+        <div class="max-w-2xl mx-auto">
+            <div class="neumorphic-card rounded-3xl p-8">
+                <p class="text-white text-lg font-medium leading-relaxed">
+                    Selamat datang di website resmi Kelas X Desain Komunikasi Visual 3 SMKN1 Nguling
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="neumorphic-card section-card rounded-3xl p-8">
+                    <h2 class="text-white font-bold text-3xl mb-6">Apa itu SepuluhDeTig?</h2>
+                    <p class="text-white/90 text-lg leading-relaxed">
+                        SepuluhDetig merupakan singkatan dari Sepuluh Dekave Tiga(Desain Komunikasi Visual) 3. 
+                        Nama tersebut merupakan nama kelas kami yaitu Kelas X Program Keahlian Desain Komunikasi Visual 3. 
+                        Angka 3 berasal dari urutan kelas yang tersedia di Program Keahlian SMKN1 NGULING, 
+                        dan kami terpilih di 3.
+                    </p>
+                </div>
+                
+                <!-- Right Content -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                    <!-- Person Reading Magazine SVG -->
+                    <div class="mb-6">
+                        <svg class="w-48 h-48 mx-auto text-white/80" viewBox="0 0 200 200" fill="currentColor">
+                            <!-- Person -->
+                            <circle cx="100" cy="60" r="20" fill="currentColor" opacity="0.8"/>
+                            <rect x="85" y="80" width="30" height="40" rx="15" fill="currentColor" opacity="0.8"/>
+                            <!-- Magazine -->
+                            <rect x="70" y="95" width="60" height="40" rx="4" fill="currentColor" opacity="0.6"/>
+                            <rect x="75" y="100" width="50" height="3" rx="1" fill="currentColor" opacity="0.9"/>
+                            <rect x="75" y="107" width="35" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+                            <rect x="75" y="112" width="40" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+                            <rect x="75" y="117" width="30" height="2" rx="1" fill="currentColor" opacity="0.7"/>
+                            <!-- Arms -->
+                            <rect x="70" y="85" width="15" height="25" rx="7" fill="currentColor" opacity="0.8"/>
+                            <rect x="115" y="85" width="15" height="25" rx="7" fill="currentColor" opacity="0.8"/>
+                        </svg>
+                    </div>
+                    <div class="neumorphic rounded-2xl p-4">
+                        <p class="text-white font-semibold text-lg">Wali Kelas:</p>
+                        <p class="text-blue-200 font-medium">Meizha Istiqomah S.Pd</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section id="content" class="py-16 px-4">
+        <div class="container mx-auto max-w-4xl">
+            <div class="space-y-8">
+                <!-- Struktur Kelas -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                    <h3 class="text-white font-bold text-2xl mb-6">Struktur Kepengurusan</h3>
+                    <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onclick="openClassManagementStructure()">
+                      Link Struktur
+                    </button>
+                </div>
+                
+                <!-- Jadwal Mata Pelajaran -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                    <h3 class="text-white font-bold text-2xl mb-6">Jadwal Mata Pelajaran</h3>
+                    <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onclick="openSchedule()">
+                        Link jadwal
+                    </button>
+                </div>
+                
+                <!-- Kode Guru -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                    <h3 class="text-white font-bold text-2xl mb-4">Kode Guru SMKN1 Nguling</h3>
+                    <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105 mb-4" onclick="openTeacherCodes()">
+                        Link kode
+                    </button>
+                </div>
+                
+                <!-- Jadwal Piket -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                    <h3 class="text-white font-bold text-2xl mb-6">Jadwal Piket Kelas
+                     </h3>
+                    <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onclick="openPiketSchedule()">
+                        Link jadwal
+                    </button>
+                </div>
+                
+                <!-- Buku Paket Matematika -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                  <h3 class="text-white font-bold text-2xl mb-6">File Buku Paket Matematika
+                   </h3>
+                  <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onclick="openLearningBookFilesMath()"> 
+                      Link Buku Paket
+                  </button>
+              </div>
+              
+                <!-- Buku Paket PAI -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                  <h3 class="text-white font-bold text-2xl mb-6">File Buku Paket PAI
+                   </h3>
+                  <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onclick="openLearningBookFilesPAI()"> 
+                      Link Buku Paket
+                  </button>
+              </div>
+              
+                <!-- Buku Paket DDKV -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                  <h3 class="text-white font-bold text-2xl mb-6">File Buku Paket DDKV
+                   </h3>
+                  <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onclick="openLearningBookFilesDDKV()"> 
+                      Link Buku Paket
+                  </button>
+              </div>
+              
+                <!-- Buku Paket Informatika -->
+                <div class="neumorphic-card section-card rounded-3xl p-8 text-center">
+                  <h3 class="text-white font-bold text-2xl mb-6">File Buku Paket Informatika
+                   </h3>
+                  <button class="gradient-button text-white font-semibold px-8 py-4 rounded-2xl hover:shadow-lg transition-all duration-300 transform hover:scale-105" onclick="openLearningBookFilesInfor()"> 
+                      Link Buku Paket
+                  </button>
+              </div>
+           </div>
+        </div>
+    </section>
+  
+    <!-- Others Section -->
+    <section id="others" class="py-16 px-4">
+        <div class="container mx-auto max-w-4xl text-center">
+            <div class="neumorphic-card section-card rounded-3xl p-8">
+                <h2 class="text-white font-bold text-3xl mb-6">Informasi Lainnya</h2>
+                <p class="text-white/90 text-lg mb-8">
+                    Untuk informasi lebih lanjut tentang kegiatan kelas dan program DKV 3, 
+                    silakan hubungi kami melalui kontak yang tersedia.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="neumorphic rounded-2xl p-6">
+                        <h4 class="text-white font-semibold text-lg mb-2">Website</h4>
+                        <p class="text-blue-200">www.sepuluhdetig.com</p>
+                    </div>
+                    <div class="neumorphic rounded-2xl p-6">
+                        <h4 class="text-white font-semibold text-lg mb-2">Email</h4>
+                        <p class="text-blue-200">sepuluhdekave3@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="neumorphic rounded-t-3xl mx-4 mb-4 mt-16">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-10 h-10 neumorphic rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold">D3</span>
+                    </div>
+                    <span class="text-white font-bold text-lg">X DKV 3</span>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="#home" class="text-white/80 hover:text-white font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-white/80 hover:text-white font-medium transition-colors">About</a>
+                    <a href="#content" class="text-white/80 hover:text-white font-medium transition-colors">Content</a>
+                    <a href="#others" class="text-white/80 hover:text-white font-medium transition-colors">Others</a>
+                </nav>
+                
+                <!-- Copyright -->
+                <div class="text-white/60 text-sm text-center md:text-right">
+                    <p>&copy; 2025 SepuluhDeTig - X DKV 3</p>
+                    <p>SMKN1 Nguling</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<script>
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+    }
+    
+    // Struktur Kelas
+    function openClassManagementStructure() {
+       window.open("https://drive.google.com/file/d/1ep38jipAJQ41hNDv3DrPrGhv3IzCWubS/view?usp=drivesdk", "_blank");
+    }
+    
+    // Jadwal Pelajaran
+    function openSchedule() {
+        window.open("https://drive.google.com/file/d/1bkhLDfaIOOWO9TyFqdHqZigjYPEt528z/view?usp=drivesdk", "_blank");
+    }
+    
+    // Kode Guru
+    function openTeacherCodes() {
+        window.open("https://drive.google.com/file/d/1dM-QDngAAvpQPNvbtxwNYwB783SZLaTf/view?usp=drivesdk", "_blank");
+    }
+    
+    // Jadwal Piket
+    function openPiketSchedule() {
+        window.open("https://drive.google.com/file/d/1vvKNBDJv2eyrLxAWypA8jy607tUqQC7V/view?usp=drivesdk", "_blank");
+    }
+    
+    // Buku Paket Matematika
+    function openLearningBookFilesMath() {
+      window.open("https://drive.google.com/drive/folders/1rW4VmucZhBS1B4fKWqfEqdjMNvBrdoNR", "_blank");
+    }
+    
+    // Buku Paket PAI
+    function openLearningBookFilesPAI() {
+      window.open("https://drive.google.com/drive/folders/1zKTTXZpVzt92uxe2xKkQ7MnWxowP0w0c", "_blank");
+    }
+    
+    // Buku Paket DDKV
+    function openLearningBookFilesDDKV() {
+      window.open("https://drive.google.com/drive/folders/1dw-8adHydfyZV-nlehaaBCZRdWlGdakc", "_blank");
+    }
+    
+    // Buku Paket Informatika
+    function openLearningBookFilesInfor() {
+      window.open("https://drive.google.com/drive/folders/1z4ySLBDsRLADfrYPloBbDyymEizIjiG9", "_blank");
+    }
+    
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            
+            const mobileMenu = document.getElementById('mobileMenu');
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    });
+    
+    // Scroll effect header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.transform = 'translateY(-5px)';
+            header.style.boxShadow = '0 20px 50px 0 rgba(31, 38, 135, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.4)';
+        } else {
+            header.style.transform = 'translateY(0)';
+            header.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+        }
+    });
+</script>
+    >
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98391858471efde6',t:'MTc1ODYyMDU3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
